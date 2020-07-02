@@ -91,7 +91,6 @@ for i in range(0, len(test_text)):
     test_corpus.append(tweet)
 
 # Count Vectorizing test_corpus to create the bag of words model
-from sklearn.feature_extraction.text import CountVectorizer
 test_corpus = cv.transform(test_corpus)
 
 # Transforming test_corpus into an array for concatenation
