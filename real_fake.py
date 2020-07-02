@@ -72,7 +72,6 @@ ids = test.iloc[:, 0].values
 test_keywords = test_keywords.reshape(len(test_keywords), 1)
 
 # Imputing train_keywords to get rid of NaN values
-imputer = SimpleImputer(missing_values=np.nan, strategy='constant', fill_value='no_keyword')
 test_keywords = imputer.transform(test_keywords)
 
 # One Hot Encoding test_keywords
