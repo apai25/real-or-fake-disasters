@@ -29,13 +29,15 @@ train_keywords = ct.fit_transform(train_keywords)
 from nltk.corpus import stopwords
 from nltk.stem.porter import PorterStemmer
 import re
+
 train_corpus = []
+all_stopwords = stopwords.words('english')
+all_stopwords.remove('not')
+ps = PorterStemmer()
 for i in range(0, len(train_text)):
     tweet = re.sub('[^a-zA-Z]', ' ', train_text[i])
     tweet = tweet.lower()
     tweet = tweet.split()
-    all_stopwords = stopwords.words('english')
-    ps = PorterStemmer()
     tweet = [ps.stem(word) for word in tweet if word not in set(all_stopwords)]
     tweet = ' '.join(tweet)
     train_corpus.append(tweet)
@@ -83,8 +85,6 @@ for i in range(0, len(test_text)):
     tweet = re.sub('[^a-zA-Z]', ' ', test_text[i])
     tweet = tweet.lower()
     tweet = tweet.split()
-    all_stopwords = stopwords.words('english')
-    ps = PorterStemmer()
     tweet = [ps.stem(word) for word in tweet if word not in set(all_stopwords)]
     tweet = ' '.join(tweet)
     test_corpus.append(tweet)
