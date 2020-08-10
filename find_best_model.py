@@ -28,8 +28,8 @@ keywords = ct.fit_transform(keywords)
 from nltk.corpus import stopwords
 from nltk.stem.porter import PorterStemmer
 import re
-corpus = []
 
+corpus = []
 all_stopwords = stopwords.words('english')
 all_stopwords.remove('not')
 ps = PorterStemmer()
