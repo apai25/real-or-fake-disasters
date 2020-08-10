@@ -29,12 +29,14 @@ from nltk.corpus import stopwords
 from nltk.stem.porter import PorterStemmer
 import re
 corpus = []
+
+all_stopwords = stopwords.words('english')
+all_stopwords.remove('not')
+ps = PorterStemmer()
 for i in range(0, len(text)):
     tweet = re.sub('[^a-zA-Z]', ' ', text[i])
     tweet = tweet.lower()
     tweet = tweet.split()
-    all_stopwords = stopwords.words('english')
-    ps = PorterStemmer()
     tweet = [ps.stem(word) for word in tweet if word not in set(all_stopwords)]
     tweet = ' '.join(tweet)
     corpus.append(tweet)
