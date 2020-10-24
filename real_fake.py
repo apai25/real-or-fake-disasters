@@ -3,7 +3,7 @@ import pandas as pd
 
 # ====================================TRAINING========================================
 # Importing training dataset
-train = pd.read_csv('train.csv')
+train = pd.read_csv('data/train.csv')
 
 # Creating train_keywords, train_text, and train_targets arrays from training dataset
 train_keywords = train.iloc[:, 1].values
@@ -63,7 +63,7 @@ classifier.fit(x_train, train_targets)
 
 # ====================================TESTING========================================
 # Importing the testing dataset
-test = pd.read_csv('test.csv')
+test = pd.read_csv('data/test.csv')
 
 # Creating ids, test_keywords, and test_text arrays from testing datsaet
 test_keywords = test.iloc[:, 1].values
